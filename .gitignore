@@ -1,0 +1,4 @@
+.DS_Store
+.proofshot/
+proofshot-output/
+__pycache__/

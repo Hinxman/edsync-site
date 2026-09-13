@@ -1,0 +1,11 @@
+EDSync includes adapted copies of in-game ship captures from the EDSM.NET
+ED-Ships-ScreenShots collection for the 38 hulls represented by that project.
+
+Source project: EDSM-NET/ED-Ships-ScreenShots
+Credit requested by the source project: https://www.edsm.net/
+
+The files were resized, renamed, and normalized to platform-native PNG/WebP
+resources. EDSync does not include or execute source code from the project.
+
+Elite Dangerous ship designs and related marks are property of Frontier
+Developments plc. Their inclusion does not imply endorsement by Frontier.
