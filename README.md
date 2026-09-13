@@ -12,7 +12,7 @@ Run `python3 -m http.server 4178` from this directory, then open http://localhos
 
 ## GitHub Pages
 
-Publish from `main`, root `/`, in **Settings → Pages → Deploy from a branch**. `.nojekyll` serves the static files directly. No application build or custom Actions workflow runs in this repository.
+Publish from `master`, root `/`, in **Settings → Pages → Deploy from a branch**. `.nojekyll` serves the static files directly. No application build or custom Actions workflow runs in this repository.
 
 The public website URL above is suitable to supply as the application's homepage during Frontier registration. It is separate from the OAuth redirect URI; hosting this website does not implement or change Frontier authentication.
 
@@ -31,7 +31,7 @@ Include installation requirements, changes and known limitations in the release 
 python3 scripts/update-releases.py v0.1.0
 ```
 
-The helper uses the authenticated GitHub CLI to read that release. It refuses draft/prerelease releases, duplicate installers, unexpected URLs, missing assets and missing SHA-256 digests. It never uploads or publishes a release. It updates `releases.json` atomically using the actual download URL, size and GitHub checksum. A missing platform remains unavailable. Review the manifest, commit and push to `main`; Pages then exposes the verified download links. Use a new release version instead of replacing an existing asset.
+The helper uses the authenticated GitHub CLI to read that release. It refuses draft/prerelease releases, duplicate installers, unexpected URLs, missing assets and missing SHA-256 digests. It never uploads or publishes a release. It updates `releases.json` atomically using the actual download URL, size and GitHub checksum. A missing platform remains unavailable. Review the manifest, commit and push to `master`; Pages then exposes the verified download links. Use a new release version instead of replacing an existing asset.
 
 `null` entries intentionally show “Coming soon.” Do not add placeholder binaries or fake download links. To withdraw a site's download button, set that platform to `null` and publish the change; manage any corresponding GitHub Release separately. The front page's introductory development copy and mobile availability should be updated as part of the first public launch.
 
