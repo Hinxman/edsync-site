@@ -1,46 +1,27 @@
-# EDSync website
+# EDSync
 
-Customer-facing information and downloads for EDSync and EDSync Command Link.
+**Your commander. Always in reach.**
 
-**Website:** https://hinxman.github.io/edsync-site/
+EDSync is a mobile companion for Elite Dangerous. Connect it to EDSync Command Link on your own PC to keep your commander, fleet, discoveries and journal close at hand.
 
-This public repository contains only the static website, approved demo screenshots, notices and release metadata. Application source remains in its separate repository. There are currently no public installers or mobile store releases linked by the site.
+[Explore EDSync](https://hinxman.github.io/edsync-site/) · [Downloads](https://hinxman.github.io/edsync-site/#downloads) · [Get started](https://hinxman.github.io/edsync-site/#setup)
 
-## Local preview
+## Your journey, connected
 
-Run `python3 -m http.server 4178` from this directory, then open http://localhost:4178. No build, dependencies, external fonts or analytics are required.
+Check your current ship and location, revisit discoveries on the galaxy map, plan expedition waypoints, and keep track of missions, materials and engineering plans. Your phone keeps previously synced information available when your PC is offline.
 
-## GitHub Pages
+Command Link reads the Elite Dangerous journal files on your Windows or Ubuntu PC. Pair your phone by scanning its QR code while both devices are on the same private network. No EDDiscovery installation is required.
 
-Publish from `master`, root `/`, in **Settings → Pages → Deploy from a branch**. `.nojekyll` serves the static files directly. No application build or custom Actions workflow runs in this repository.
+## Availability
 
-The public website URL above is suitable to supply as the application's homepage during Frontier registration. It is separate from the OAuth redirect URI; hosting this website does not implement or change Frontier authentication.
+EDSync for iOS and Android, and Command Link for Windows and Ubuntu, are in active development. Public installers and mobile store links are not yet available. They will appear on the [download page](https://hinxman.github.io/edsync-site/#downloads) when ready.
 
-## Publish installers
+The website includes real demo-mode screenshots from iPhone, iPad and an Android tablet. Development builds include a sample commander so you can explore the app before pairing a PC.
 
-Use this repository's **GitHub Releases** for downloadable binaries, not Git or GitHub Pages. Keep builds, signing keys and app source in the existing private build environment. Only upload installers approved for public distribution after platform testing and the project's release/signing process.
+## Help and privacy
 
-Create a release initially as a draft. Upload the tested installers using these filenames:
+Read the [getting started guide](https://hinxman.github.io/edsync-site/#setup) and [common questions](https://hinxman.github.io/edsync-site/#faq-title), or [open a support issue](https://github.com/Hinxman/edsync-site/issues). Support issues are public, so please leave out pairing codes, credentials and personal journal files.
 
-- `EDSync-Command-Link-<version>-win-x64-setup.exe`
-- `EDSync-Command-Link-<version>-linux-x64.deb`
+[Privacy information](https://hinxman.github.io/edsync-site/privacy.html) · [Credits](https://hinxman.github.io/edsync-site/credits.html) · [Release updates](https://github.com/Hinxman/edsync-site/releases)
 
-Include installation requirements, changes and known limitations in the release notes. Publish the stable release when ready, then run:
-
-```sh
-python3 scripts/update-releases.py v0.1.0
-```
-
-The helper uses the authenticated GitHub CLI to read that release. It refuses draft/prerelease releases, duplicate installers, unexpected URLs, missing assets and missing SHA-256 digests. It never uploads or publishes a release. It updates `releases.json` atomically using the actual download URL, size and GitHub checksum. A missing platform remains unavailable. Review the manifest, commit and push to `master`; Pages then exposes the verified download links. Use a new release version instead of replacing an existing asset.
-
-`null` entries intentionally show “Coming soon.” Do not add placeholder binaries or fake download links. To withdraw a site's download button, set that platform to `null` and publish the change; manage any corresponding GitHub Release separately. The front page's introductory development copy and mobile availability should be updated as part of the first public launch.
-
-## Mobile releases
-
-Add App Store and Google Play links only after the actual listings are public. The Android debug APK used to take screenshots is not a public release artifact.
-
-## Screenshots and assets
-
-The site uses real demo-mode screenshots, with CMDR Aster Vale, captured from the current development app. Device information and provenance are documented in `assets/screenshots/README.md`. Do not publish personal profiles, device pairing codes or credentials.
-
-Barlow Condensed is distributed under the SIL Open Font License in `assets/OFL.txt`. Game and community asset notices are in `assets/licenses/` and the public credits page. The screenshots do not grant a separate license to underlying Frontier assets. Website code and EDSync branding have no additional open-source license declared in this repository.
+EDSync is an independent community project and is not affiliated with or endorsed by Frontier Developments. Elite Dangerous and related marks belong to Frontier Developments.
